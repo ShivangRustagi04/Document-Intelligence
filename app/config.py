@@ -1,0 +1,2 @@
+EMBEDDING_DIM = 384
+TOP_K = 3
