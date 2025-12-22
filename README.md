@@ -72,30 +72,10 @@ curl -X POST "http://127.0.0.1:8000/extract" \
 }
 ```
 
-## 4. Design Notes
-- Use semantic embeddings only where document ambiguity exists.
-- KPI summaries (e.g., Total Overdue Amount) are extracted deterministically.
-- Confidence scores combine semantic relevance and extraction certainty.
 
----
+## 4. Hard-coded Test Examples 
 
-## 5. Hard-coded Test Examples (REQUIRED)
-
-Create this file: `tests/test_examples.py`
-
-### Content (copy-paste)
-```python
-"""
-Hard-coded test examples for CRIF & GSTR-3B extraction
-"""
-
-def main():
-        # Minimal smoke test placeholder
-        print("CRIF & GSTR-3B extraction tests placeholder")
-
-if __name__ == "__main__":
-        main()
-```
+`tests/test_examples.py`
 
 Run it with:
 ```bash
