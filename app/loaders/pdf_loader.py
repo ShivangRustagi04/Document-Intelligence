@@ -5,13 +5,12 @@ from pypdf import PdfReader
 def parse_pdf(file_obj):
     pages = []
 
-    # ---------- PRIMARY: PyMuPDF ----------
     doc = fitz.open(stream=file_obj.read(), filetype="pdf")
 
     for i, page in enumerate(doc):
         text = page.get_text("text")
 
-        # Table-safe: also extract blocks
+
         blocks = page.get_text("blocks")
         block_text = ""
         for b in blocks:
@@ -23,7 +22,6 @@ def parse_pdf(file_obj):
             "text": text + "\n" + block_text
         })
 
-    # ---------- FALLBACK: PyPDF ----------
     if not any("Overdue" in p["text"] for p in pages):
         file_obj.seek(0)
         reader = PdfReader(file_obj)
