@@ -27,14 +27,8 @@ async def extract(
 
 
     bureau_score_query = "bureau score credit score CRIF report"
-    overdue_query = (
-    "Total Amount Overdue Account Summary table CRIF "
-    "All amounts are in INR Overdue Accounts"
-)
-
 
     bureau_score_emb = embedder.transform([bureau_score_query])[0]
-    overdue_emb = embedder.transform([overdue_query])[0]
 
     bureau_score_chunks = store.search(bureau_score_emb, k=3)
 
